@@ -25,9 +25,8 @@ public class CourseMaterial {
     private String url;
     @OneToOne(
             cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY, //It will fetch only course material
-                                    //FetchType.EAGER will fetch the course as well
-            optional = false //whenever we want to add course material we also need to add the course
+            fetch = FetchType.LAZY,
+            optional = false
     )
     @JoinColumn(name = "course_id")
     private Course course;

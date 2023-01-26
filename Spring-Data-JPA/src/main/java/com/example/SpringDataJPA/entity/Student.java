@@ -6,8 +6,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
-@Data //for getter setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -23,4 +25,6 @@ public class Student {
     private String emailId;
     @Embedded
     private Guardian guardian;
+    @ManyToMany(mappedBy = "students")
+    private List<Course> courses;
 }
